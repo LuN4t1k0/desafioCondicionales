@@ -3,6 +3,7 @@ const password = () => {
   let pass2 = document.querySelector('#pass2').value
   let pass3 = document.querySelector('#pass3').value
   let lock = document.querySelector('#lock')
+  let result = document.querySelector('.result')
 
   let passwordIngresada = `${pass1}${pass2}${pass3}`
   console.log(passwordIngresada);
@@ -13,12 +14,18 @@ const password = () => {
 
   if(passwordIngresada == password1 || passwordIngresada == password2){
     if(passwordIngresada == password1){
-      console.log("La password1 es correcta");
+      
+      result.innerHTML = "La password1 es correcta"
+      lock.classList.add('lock-box1')
     }else{
-      console.log("la password 2 es correcta");
+      
+      lock.classList.add('lock-box1')
+      result.innerHTML = "La password2 es correcta"
     }
   }else{
     console.log("la password es incorrecta");
+    lock.classList.remove('lock-box1')
+    result.innerHTML = "La password ingresada no es correcta"
   }
   
 }
