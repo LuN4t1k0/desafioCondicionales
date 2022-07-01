@@ -8,3 +8,42 @@ section{
   background-color: blueviolet;
   
 }
+
+.contenedor{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  
+}
+
+.headerText{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  
+
+}
+.cards{
+  display: flex;
+  gap: 10px;
+}
+
+.text{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.button_contenedor{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button_contenedor button{
+  width: 100%;
+}
