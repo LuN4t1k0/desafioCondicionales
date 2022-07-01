@@ -5,5 +5,13 @@ section{
   justify-content: center;
   align-items: center;
   gap: 10px;
-  background-color: darkcyan;
+  background-color: #000;
 }
+
+
+.img-starwars{
+  border: 10px solid rgb(246, 225, 80);
+  border-radius: 20px;
+}
+
+
