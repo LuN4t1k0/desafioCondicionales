@@ -8,4 +8,3 @@ img-starwars on the principal image. */
 cuerpo.addEventListener('click', () => {
   principal.classList.toggle('img-starwars')
 })
-
