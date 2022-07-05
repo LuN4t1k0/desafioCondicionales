@@ -1,4 +1,4 @@
-section{
+section {
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -8,10 +8,7 @@ section{
   background-color: #000;
 }
 
-
-.img-starwars{
+.img-starwars {
   border: 10px solid rgb(246, 225, 80);
   border-radius: 20px;
 }
-
-

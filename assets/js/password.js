@@ -1,36 +1,36 @@
-const password = () => {
-  let pass1 = document.querySelector('#pass1').value
-  let pass2 = document.querySelector('#pass2').value
-  let pass3 = document.querySelector('#pass3').value
-  let lock = document.querySelector('#lock')
-  let result = document.querySelector('.result')
-
-  let passwordIngresada = `${pass1}${pass2}${pass3}`
-  console.log(passwordIngresada);
-
-  const password1 = 911;
-  const password2 = 714;
-
-
-  if(passwordIngresada == password1 || passwordIngresada == password2){
-    if(passwordIngresada == password1){
-      
-      result.innerHTML = "La password1 es correcta"
-      lock.classList.add('lock-box1')
-    }else{
-      
-      lock.classList.add('lock-box1')
-      result.innerHTML = "La password2 es correcta"
-    }
-  }else{
-    console.log("la password es incorrecta");
-    lock.classList.remove('lock-box1')
-    result.innerHTML = "La password ingresada no es correcta"
-  }
-  
+const lockBox = (isLock, lockElemId = '#lock', lockClassName = 'lock-box1') => {
+  const lock = document.querySelector(lockElemId)
+  return isLock
+    ? lock.classList.add(lockClassName)
+    : lock.classList.remove(lockClassName)
 }
 
+const obtenerPasswordIngresada = () => {
+  const pass1 = document.querySelector('#pass1').value
+  const pass2 = document.querySelector('#pass2').value
+  const pass3 = document.querySelector('#pass3').value
+  return `${pass1}${pass2}${pass3}`
+}
 
+const mostrarMensaje = mensaje =>
+  (document.querySelector('.result').innerHTML = mensaje)
 
+const validarPassword = () => {
+  const password1 = '911'
+  const password2 = '714'
+  const passwordIngresada = obtenerPasswordIngresada()
+  let mensajeRespuesta = ''
 
+  if (passwordIngresada === password1) {
+    lockBox(true)
+    mensajeRespuesta = 'La password1 es correcta'
+  } else if (passwordIngresada === password2) {
+    lockBox(true)
+    mensajeRespuesta = 'La password2 es correcta'
+  } else {
+    lockBox(false)
+    mensajeRespuesta = 'La password ingresada no es correcta'
+  }
 
+  mostrarMensaje(mensajeRespuesta)
+}
