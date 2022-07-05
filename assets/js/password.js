@@ -12,14 +12,12 @@ const password = () => {
   const password1 = 911;
   const password2 = 714;
 
-  if (passwordIngresada == password1 || passwordIngresada == password2) {
-    if (passwordIngresada == password1) {
-      result.innerHTML = "La password1 es correcta"
-      lock.classList.add('lock-box1')
-    } else {
-      lock.classList.add('lock-box1')
-      result.innerHTML = "La password2 es correcta"
-    }
+  if (passwordIngresada === password1) {
+    result.innerHTML = "La password1 es correcta"
+    lock.classList.add('lock-box1')
+  } else if (passwordIngresada == password2) {
+    lock.classList.add('lock-box1')
+    result.innerHTML = "La password2 es correcta"
   } else {
     console.log("la password es incorrecta");
     lock.classList.remove('lock-box1')
